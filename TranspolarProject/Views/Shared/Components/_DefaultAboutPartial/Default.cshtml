@@ -1,0 +1,25 @@
+﻿@using EntityLayer.Concrete
+@model List<SubAbout>
+<section class="w3l-grids-3 py-5" id="about">
+	<div class="container py-md-5 py-3">
+		<div class="row w3home-ab-grids">
+			@foreach (var item in Model)
+			{
+				<div class="w3ab-right-top col-lg-6 pe-lg-5">
+					<img src="@item.ImageUrl" alt="" class="img-fluid radius-image">
+				</div>
+				<div class="w3ab-left-top col-lg-6 mt-lg-0 mt-4 pt-lg-0 pt-2">
+					<h3 class="title-w3l mb-2">@item.Title</h3>
+					<p class="my-3">
+						@item.Description
+					</p>
+
+					<a href="about.html" class="btn btn-style btn-primary mt-4">Daha Fazlası...</a>
+				</div>
+			}
+		</div>
+	</div>
+</section>
+
+
+

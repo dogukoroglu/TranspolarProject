@@ -1,0 +1,38 @@
+﻿@using EntityLayer.Concrete
+@model List<Testimonial>
+
+<section class="w3l-clients py-5" id="testimonials">
+	<div class="container pt-md-5 pt-4">
+		<div class="w3-testimonial-grids align-items-center py-lg-5">
+			<div class="w3-testimonial-content-top">
+				<div class="mb-4">
+					<div class="item">
+						<div class="testimonial-content">
+							@foreach (var item in Model)
+							{
+							<div class="testimonial">
+								<blockquote>
+									<q>
+										<i class="fas fa-quote-left me-2"></i>
+										@item.Comment
+									</q>
+								</blockquote>
+								<div class="testi-des">
+									<div class="test-img">
+										<img src="@item.ClientImage" class="img-fluid" alt="client-img">
+									</div>
+									<div class="peopl align-self">
+										<h3>@item.Client</h3>
+										<p class="indentity">@item.ClientJob</p>
+									</div>
+								</div>
+							</div>
+							}
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>
