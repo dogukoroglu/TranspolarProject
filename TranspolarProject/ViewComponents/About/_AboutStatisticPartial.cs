@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace TranspolarProject.ViewComponents.About
 {
-	public class _StatisticPartial : ViewComponent
+	public class _AboutStatisticPartial : ViewComponent
 	{
 		public IViewComponentResult Invoke()
 		{

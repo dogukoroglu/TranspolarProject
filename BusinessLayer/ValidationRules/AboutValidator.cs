@@ -14,9 +14,6 @@ namespace BusinessLayer.ValidationRules
         {
             RuleFor(x => x.Title).NotEmpty().WithMessage("Bu alan boş geçilemez!");
             RuleFor(x => x.Content).NotEmpty().WithMessage("Bu alan boş geçilemez!");
-            RuleFor(x => x.SubTitle).NotEmpty().WithMessage("Bu alan boş geçilemez!");
-            RuleFor(x => x.SubDescription).NotEmpty().WithMessage("Bu alan boş geçilemez!");
-            RuleFor(x => x.SubIcon).NotEmpty().WithMessage("Bu alan boş geçilemez!");
         }
     }
 }

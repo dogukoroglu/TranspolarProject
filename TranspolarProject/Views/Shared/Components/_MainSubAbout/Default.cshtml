@@ -1,0 +1,19 @@
+﻿@using EntityLayer.Concrete
+@model List<About2>
+
+<div class="row two-grids mt-5 pt-lg-4">
+	@foreach (var item in Model)
+	{
+	<div class="col-sm-6 grids_info d-flex">
+		<i class="@item.Icon"></i>
+		<div class="detail ms-3">
+			<h4>@item.Title</h4>
+			<p>
+				@item.Description
+			</p>
+		</div>
+	</div>
+	}
+</div>
+
+

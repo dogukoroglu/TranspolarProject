@@ -10,23 +10,8 @@
                             </a>
                         </h2>
                         <p class="footer-phny mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ute dolor sit.</p>
-                        <div class="columns-2 mt-4 pt-lg-2">
-                            <ul class="social">
-                                <li>
-                                    <a href="#facebook"><span class="fab fa-facebook-f"></span></a>
-                                </li>
-                                <li>
-                                    <a href="#linkedin"><span class="fab fa-linkedin-in"></span></a>
-                                </li>
-                                <li>
-                                    <a href="#twitter"><span class="fab fa-twitter"></span></a>
-                                </li>
-                                <li>
-                                    <a href="#google"><span class="fab fa-google-plus-g"></span></a>
-                                </li>
-
-                            </ul>
-                        </div>
+                        @*burası veritabanından çekilecek*@
+                        @await Component.InvokeAsync("_FooterSocialMediaPartial")
                     </div>
 
                     <div class="col-lg-8 sub-two-right">
@@ -35,10 +20,10 @@
                                 <h6>Who We Are</h6>
                                 <ul>
                                     <li>
-                                        <a href="about.html">About Us</a>
+                                        <a href="about.html">Hakkımızda</a>
                                     </li>
                                     <li>
-                                        <a href="about.html"> Our Team</a>
+                                        <a href="about.html"> Takım Arkadaşlarımız</a>
                                     </li>
                                     <li>
                                         <a href="#news">New & Media</a>
@@ -55,22 +40,22 @@
                                 <h6>What We Do</h6>
                                 <ul>
                                     <li>
-                                        <a href="#warehousing"> Warehousing</a>
+                                        <a href="#warehousing"> Depolama</a>
                                     </li>
                                     <li>
-                                        <a href="#air">Air Freight</a>
+                                        <a href="#air">Hava Taşımacılığı</a>
                                     </li>
                                     <li>
-                                        <a href="#ocean">Ocean Freight</a>
+                                        <a href="#ocean">Deniz Taşımacılığı</a>
                                     </li>
                                     <li>
-                                        <a href="#road">Road Freight</a>
+                                        <a href="#road">Karayolu Taşımacılığı</a>
                                     </li>
                                     <li>
-                                        <a href="#supply">Supply Chain</a>
+                                        <a href="#supply">Tedarik Zinciri</a>
                                     </li>
                                     <li>
-                                        <a href="#packaging">Packing</a>
+                                        <a href="#packaging">Paketleme</a>
                                     </li>
                                 </ul>
                             </div>
@@ -78,19 +63,19 @@
                                 <h6>Company</h6>
                                 <ul>
                                     <li>
-                                        <a href="#request">Request a Freight</a>
+                                        <a href="#request">Bize Ulaşın</a>
                                     </li>
                                     <li>
-                                        <a href="#track">Track & Trace</a>
+                                        <a href="#track">Takip & İzleme</a>
                                     </li>
                                     <li>
-                                        <a href="#job"> Job Application</a>
+                                        <a href="#job"> Kariyer</a>
                                     </li>
                                     <li>
-                                        <a href="#posts">News</a>
+                                        <a href="#posts">Gelişmeler</a>
                                     </li>
                                     <li>
-                                        <a href="#support"> Support 24/7</a>
+                                        <a href="#support"> 24/7 Canlı Destek</a>
                                     </li>
                                     <li>
                                         <a href="#story"> User Stories</a>
@@ -101,22 +86,22 @@
                                 <h6>More Info</h6>
                                 <ul>
                                     <li>
-                                        <a href="#planing"> Planning</a>
+                                        <a href="#planing"> Planlama</a>
                                     </li>
                                     <li>
-                                        <a href="#processing">Expert Tips</a>
+                                        <a href="#processing">Uzman Görüşler</a>
                                     </li>
                                     <li>
-                                        <a href="#research">Tips & Strategies</a>
+                                        <a href="#research">İpuçları & Stratejiler</a>
                                     </li>
                                     <li>
-                                        <a href="#metal"> Easy Payment</a>
+                                        <a href="#metal"> Kolay Ödeme</a>
                                     </li>
                                     <li>
-                                        <a href="#delivery"> Fast Delivery</a>
+                                        <a href="#delivery"> Hızlı Teslimat</a>
                                     </li>
                                     <li>
-                                        <a href="#faq"> Faqs</a>
+                                        <a href="#faq"> S.S.S</a>
                                     </li>
                                 </ul>
                             </div>
@@ -134,10 +119,10 @@
 
                     <ul class="footer-w3list text-right">
                         <li>
-                            <a href="#url">Privacy Policy</a>
+                            <a href="#url">Gizlilik Sözleşmesi</a>
                         </li>
                         <li>
-                            <a href="#url">Terms &amp; Conditions</a>
+                            <a href="#url">Şartlar &amp; Koşullar</a>
                         </li>
                     </ul>
                 </div>
