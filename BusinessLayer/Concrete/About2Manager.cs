@@ -30,7 +30,7 @@ namespace BusinessLayer.Concrete
 
 		public About2 TGetByID(int id)
 		{
-			throw new NotImplementedException();
+			return _about2Dal.GetByID(id);
 		}
 
 		public List<About2> TGetListAll()

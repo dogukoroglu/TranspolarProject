@@ -30,7 +30,7 @@ namespace BusinessLayer.Concrete
 
 		public HomeFeature TGetByID(int id)
 		{
-			throw new NotImplementedException();
+			return _homeFeatureDal.GetByID(id);
 		}
 
 		public List<HomeFeature> TGetListAll()

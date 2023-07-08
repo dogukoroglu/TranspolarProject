@@ -30,7 +30,7 @@ namespace BusinessLayer.Concrete
 
 		public Staff TGetByID(int id)
 		{
-			throw new NotImplementedException();
+			return _staffDal.GetByID(id);
 		}
 
 		public List<Staff> TGetListAll()

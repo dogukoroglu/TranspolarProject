@@ -30,7 +30,7 @@ namespace BusinessLayer.Concrete
 
 		public SocialMedia TGetByID(int id)
 		{
-			throw new NotImplementedException();
+			return _socialMediaDal.GetByID(id);
 		}
 
 		public List<SocialMedia> TGetListAll()
