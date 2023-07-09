@@ -48,14 +48,16 @@
 								{
 									<td>Çalışıyor</td>
 								}
-								<td><a href="#" class="btn btn-warning" style="color:white">İzinli Yap</a></td>
-								<td><a href="#" class="btn btn-primary" style="color:white">Çalışıyor Yap</a></td>
-								<td><a href="#" class="btn btn-danger" style="color:white">Sil</a></td>
-								<td><a href="#" class="btn btn-success" style="color:white">Düzenle</a></td>
+								<td><a href="/Member/Staff/StatusChangeFalse/@item.StaffID" class="btn btn-warning" style="color:white">İzinli Yap</a></td>
+								<td><a href="/Member/Staff/StatusChangeTrue/@item.StaffID" class="btn btn-primary" style="color:white">Çalışıyor Yap</a></td>
+								<td><a href="/Member/Staff/DeleteStaff/@item.StaffID" class="btn btn-danger" style="color:white">Sil</a></td>
+								<td><a href="/Member/Staff/EditStaff/@item.StaffID" class="btn btn-success" style="color:white">Düzenle</a></td>
 							</tr>
 						}
 					</tbody>
 				</table>
+				<br />
+				<td><a href="/Member/Staff/AddStaff/" class="btn btn-dark" style="color:white">Yeni Personel Ekle</a></td>
 			</div>
 		</div>
 	</div>

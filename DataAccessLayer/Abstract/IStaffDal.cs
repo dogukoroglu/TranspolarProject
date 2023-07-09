@@ -9,5 +9,7 @@ namespace DataAccessLayer.Abstract
 {
 	public interface IStaffDal : IGenericDal<Staff>
 	{
+		void ChangeStaffStatusTrue(int id);
+		void ChangeStaffStatusFalse(int id);
 	}
 }

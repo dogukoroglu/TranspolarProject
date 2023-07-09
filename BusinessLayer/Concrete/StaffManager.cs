@@ -23,6 +23,16 @@ namespace BusinessLayer.Concrete
 			_staffDal.Insert(t);
 		}
 
+		public void TChangeStaffStatusFalse(int id)
+		{
+			_staffDal.ChangeStaffStatusFalse(id);
+		}
+
+		public void TChangeStaffStatusTrue(int id)
+		{
+			_staffDal.ChangeStaffStatusTrue(id);
+		}
+
 		public void TDelete(Staff t)
 		{
 			_staffDal.Delete(t);

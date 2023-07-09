@@ -9,5 +9,7 @@ namespace BusinessLayer.Abstract
 {
 	public interface IStaffService : IGenericService<Staff>
 	{
+		void TChangeStaffStatusTrue(int id);
+		void TChangeStaffStatusFalse(int id);
 	}
 }
