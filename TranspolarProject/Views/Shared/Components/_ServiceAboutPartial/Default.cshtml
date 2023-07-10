@@ -1,0 +1,10 @@
+﻿@using EntityLayer.Concrete
+@model List<About>
+
+@foreach (var item in Model)
+{    
+<h3 class="title-w3l">
+	@item.Title
+</h3>
+<p class="mt-4">@item.Content</p>
+}

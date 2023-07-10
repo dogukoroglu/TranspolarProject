@@ -1,0 +1,12 @@
+﻿@using EntityLayer.Concrete
+@model List<Service>
+
+<h6 class="title-subw3hny">Ne Yapıyoruz</h6>
+<ul class="w3l-right-book w3l-right-book-grid mt-md-5 mt-4">
+	@foreach (var item in Model)
+	{	
+		<li>
+			<span class="fas fa-check"></span>@item.ServiceTitle
+		</li>
+	}
+</ul>

@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UILayout.cshtml";
+}
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+-->
+<!doctype html>
+<html lang="en">
+
+<body>
+<div class="inner-banner py-5">
+        <section class="w3l-breadcrumb text-left py-sm-5 ">
+            <div class="container">
+                <div class="w3breadcrumb-gids">
+                    <div class="w3breadcrumb-left text-left">
+                        <h2 class="inner-w3-title mt-lg-5 mt-4">
+                            Hizmetlerimiz </h2>
+                    </div>
+                    <div class="w3breadcrumb-right">
+                        <ul class="breadcrumbs-custom-path">
+                            <li><a href="/Default/Index/">Anasayfa</a></li>
+                            <li class="active"><span class="fas fa-angle-double-right mx-2"></span> Hizmetlerimiz </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <section class="w3l-index-about py-5" id="about2">
+        <div class="container py-md-5 py-2">
+            <div class="row">
+                <div class="col-lg-6 pe-lg-5">
+                    <div class="w3l-abouthny-img">
+                        <img src="~/transpolar/assets/images/ab.jpg" alt="" class="img-fluid radius-image">
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-lg-0 mt-5">
+                    <div class="w3l-abouthny-info">
+                        @await Component.InvokeAsync("_ServiceAboutPartial")
+                        
+                        @await Component.InvokeAsync("_ServiceServicesPartial")
+                        
+                        
+                        <a href="#services" class="btn btn-style btn-primary mt-4">Detaylar İçin Bize Ulaşın</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @await Component.InvokeAsync("_ServiceServiceDetailsPartial")
+
+    @await Component.InvokeAsync("_ServiceFeaturedServicePartial")
+
+
+</body>
+
+</html>
+
