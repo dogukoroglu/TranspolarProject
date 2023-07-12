@@ -3,7 +3,7 @@ using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Mvc;
 
-namespace TranspolarProject.Areas.Member.Controllers.Services
+namespace TranspolarProject.Areas.Member.Controllers.MemberService
 {
 	[Area("Member")]
 	[Route("Member/Services")]

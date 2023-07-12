@@ -29,7 +29,7 @@ namespace TranspolarProject.Areas.Member.Controllers
             userEditViewModel.Email = values.Email;
             userEditViewModel.Phonenumber = values.PhoneNumber;
             userEditViewModel.Gender = values.Gender;
-            userEditViewModel.ImageUrl = values.ImageUrl;
+            userEditViewModel.ImageUrl = values.ImageUrl;   
             return View(userEditViewModel);
         }
 
