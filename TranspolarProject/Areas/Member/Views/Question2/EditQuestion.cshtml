@@ -1,0 +1,29 @@
+﻿@model EntityLayer.Concrete.Question2
+
+@{
+    ViewData["Title"] = "EditQuestion";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+
+<div class="col-md-12 grid-margin stretch-card">
+	<div class="card">
+		<div class="card-body">
+			<h4 class="card-title">Sorular Alanı İçerik Detayları Sayfası</h4>
+			<form method="post" class="forms-sample">
+				<input type="hidden" asp-for="Question2ID" />
+				<div class="form-group">
+					<label for="exampleInputUsername1">Başlık</label>
+					<input type="text" class="form-control" id="exampleInputUsername1" asp-for="Title">
+				</div>
+				<div class="form-group">
+					<label for="exampleTextarea1">Açıklama</label>
+					<textarea class="form-control" id="exampleTextarea1" rows="4" asp-for="Content"></textarea>
+				</div>
+				<button type="submit" class="btn btn-primary me-2">Güncelle</button>
+				<button type="reset" class="btn btn-light">İptal Et</button>
+			</form>
+		</div>
+	</div>
+</div>
+

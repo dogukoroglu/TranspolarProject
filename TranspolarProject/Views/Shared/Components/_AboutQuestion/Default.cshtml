@@ -1,0 +1,15 @@
+﻿@using EntityLayer.Concrete
+@model List<Question>
+
+<div class="col-lg-6 faqw3-right pe-lg-5">
+	<div class="faqw3content text-left">
+		<h6 class="title-subw3hny mb-1 text-left">Ask by Client</h6>
+		<h3 class="title-w3l mb-2">Sık Sorulan Sorular</h3>
+	</div>
+	@foreach (var item in Model)
+	{
+		<p class="mb-3">
+			@item.Content
+		</p>
+	}
+</div>

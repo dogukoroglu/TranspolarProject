@@ -1,0 +1,24 @@
+﻿@using EntityLayer.Concrete
+@model List<Question2>
+
+<div class="col-lg-6 faqw3-left">
+	<div class="accordion" id="accordionExample">
+		<div class="accordion-item">
+			@foreach (var item in Model)
+			{
+			<h4 class="accordion-header" id="@item.Area1">
+				<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#@item.Area2" aria-expanded="false" aria-controls="@item.Area3">
+					@item.Title
+				</button>
+			</h4>
+			<div id="@item.Area4" class="accordion-collapse collapse" aria-labelledby="@item.Area5" data-bs-parent="#accordionExample">
+				<div class="accordion-body">
+					@item.Content
+				</div>
+			</div>
+			}
+		</div>
+	</div>
+</div>
+
+

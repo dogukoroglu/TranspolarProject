@@ -1,0 +1,47 @@
+﻿@using EntityLayer.Concrete
+@model List<Testimonial>
+
+@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+	<div class="card">
+		<div class="card-body">
+			<h4 class="card-title">Referans Listesi</h4>
+			<div class="table-responsive">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Görsel</th>
+							<th>İsim-Soyisim</th>
+							<th>Yorum</th>
+							<th>Pozisyonu</th>
+							<th>Sil</th>
+							<th>Detaylar</th>
+						</tr>
+					</thead>
+					<tbody>
+						@foreach (var item in Model)
+						{
+							<tr>
+								<td>@item.TestimonialID</td>
+								<td class="py-1">
+									<img src="@item.ClientImage" alt="image" />
+								</td>
+								<td>@item.Client</td>
+								<td>@item.Comment.Substring(0,30)...</td>
+								<td>@item.ClientJob</td>
+								<td><a href="/Member/Testimonial/DeleteTestimonial/@item.TestimonialID" class="btn btn-danger" style="color:white">Sil</a></td>
+								<td><a href="/Member/Testimonial/TestimonialDetails/@item.TestimonialID" class="btn btn-success" style="color:white">Detaylar</a></td>
+							</tr>
+						}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
