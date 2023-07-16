@@ -27,6 +27,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\Customer\Data\" />
     <Folder Include="Areas\Member\Data\" />
   </ItemGroup>
 
