@@ -12,5 +12,6 @@ namespace BusinessLayer.Abstract
 		List<ServiceRequest> GetListApprovalRequest(int id);
 		List<ServiceRequest> GetListCurrentRequest(int id);
 		List<ServiceRequest> GetListOldRequest(int id);
+		List<ServiceRequest> GetListAllRequest(int id);
 	}
 }

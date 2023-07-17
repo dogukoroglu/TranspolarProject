@@ -1,0 +1,34 @@
+﻿@using EntityLayer.Concrete
+@model List<ServiceRequest>
+
+<div class="row">
+	<div class="col-md-12 stretch-card">
+		<div class="card">
+			<div class="card-body">
+				<p class="card-title">Hizmet Talepleri</p>
+				<div class="table-responsive">
+					<table id="recent-purchases-listing" class="table">
+						<thead>
+							<tr>
+								<th>Hizmet</th>
+								<th>Durum</th>
+								<th>Konum</th>
+								<th>Talep İşlem Tarihi</th>
+							</tr>
+						</thead>
+						<tbody>
+							@foreach (var item in Model)
+							{	
+							<tr>
+								<td>@item.RequestService</td>
+								<td>@item.Status</td>
+								<td>@item.City</td>
+								<td>@item.RequestDate</td>
+							</tr>
+							}
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

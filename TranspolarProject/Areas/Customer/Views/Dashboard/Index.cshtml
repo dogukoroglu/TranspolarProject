@@ -86,40 +86,7 @@
         </div>
     </div>
 </div>*@
-<div class="row">
-	<div class="col-md-12 stretch-card">
-		<div class="card">
-			<div class="card-body">
-				<p class="card-title">Hizmet Talepleri</p>
-				<div class="table-responsive">
-					<table id="recent-purchases-listing" class="table">
-						<thead>
-							<tr>
-								<th>Hizmet</th>
-								<th>Durum</th>
-								<th>Konum</th>
-								<th>Oluşturma Tarihi</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Ofis Taşıma</td>
-								<td>Onay Bekliyor</td>
-								<td>Mersin</td>
-								<td>16.07.2023</td>
-							</tr>
-							<tr>
-								<td>Konteyner Taşıma</td>
-								<td>Onaylandı</td>
-								<td>Mersin Limanı</td>
-								<td>10.07.2023</td>
-							</tr>
-					</table>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+@await Component.InvokeAsync("_CustomerDashboardRequestList")
 
 
 

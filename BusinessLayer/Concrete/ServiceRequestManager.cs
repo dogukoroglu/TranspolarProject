@@ -18,6 +18,11 @@ namespace BusinessLayer.Concrete
 			_serviceRequestDal = serviceRequestDal;
 		}
 
+		public List<ServiceRequest> GetListAllRequest(int id)
+		{
+			return _serviceRequestDal.GetListByFilter(x => x.AppUserID == id);
+		}
+
 		public List<ServiceRequest> GetListApprovalRequest(int id)
 		{
 			return _serviceRequestDal.GetListByFilter(x=>x.AppUserID == id && x.Status == "Onay Bekliyor");
@@ -50,7 +55,7 @@ namespace BusinessLayer.Concrete
 
 		public List<ServiceRequest> TGetListAll()
 		{
-			throw new NotImplementedException();
+			return _serviceRequestDal.GetListAll();
 		}
 
 		public void TUpdate(ServiceRequest t)
