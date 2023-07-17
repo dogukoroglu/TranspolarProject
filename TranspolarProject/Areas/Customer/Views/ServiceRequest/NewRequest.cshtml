@@ -1,0 +1,73 @@
+﻿@model EntityLayer.Concrete.ServiceRequest
+@{
+	ViewData["Title"] = "NewRequest";
+	Layout = "~/Views/Shared/_CustomerLayout.cshtml";
+}
+
+<div class="col-12 grid-margin">
+	<div class="card">
+		<div class="card-body">
+			<h4 class="card-title">Yeni Hizmet Talebi Oluşturma Sayfası</h4>
+			<form class="form-sample" method="post">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group row">
+							<label class="col-sm-3 col-form-label">Hizmet Seçiniz</label>
+							<div class="col-sm-9">
+								@Html.DropDownListFor(x=>x.RequestService,(List<SelectListItem>)ViewBag.v,new{@class="form-control"})
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group row">
+							<label class="col-sm-3 col-form-label">Hizmet Tarihi</label>
+							<div class="col-sm-9">
+								<input type="date" class="form-control" asp-for="RequestDate" />
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group row">
+							<label class="col-sm-3 col-form-label">Çıkış Noktası</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" asp-for="Address1" />
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group row">
+							<label class="col-sm-3 col-form-label">Şehir(Varış)</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" asp-for="City" />
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group row">
+							<label class="col-sm-3 col-form-label">Varış Noktası</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" asp-for="Address2" />
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group row">
+							<label class="col-sm-3 col-form-label">Ülke(Varış)</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" asp-for="Country" />
+							</div>
+						</div>
+					</div>
+				</div>
+				<button type="submit" class="btn btn-dark">Talep Oluştur</button>
+				<button type="reset" class="btn btn-danger" style="color:white">İptal Et</button>
+			</form>
+		</div>
+	</div>
+</div>
+

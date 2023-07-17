@@ -47,7 +47,7 @@ namespace TranspolarProject.Areas.Customer.Controllers
 				var result = await _userManager.CreateAsync(appUser, model.Password);
 				if (result.Succeeded)
 				{
-					return RedirectToAction("SignIn");
+					return RedirectToAction("SignIn", new { area = "Customer" });
 				}
 				else
 				{

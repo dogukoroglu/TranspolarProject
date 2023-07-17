@@ -30,5 +30,6 @@ namespace DataAccessLayer.Concrete
 		public DbSet<Testimonial> Testimonials{ get; set; }
 		public DbSet<SocialMedia> SocialMedias{ get; set; }
 		public DbSet<About2> About2s{ get; set; }
+		public DbSet<ServiceRequest> ServiceRequests{ get; set; }
 	}
 }
