@@ -1,0 +1,36 @@
+﻿@model List<AppRole>
+
+@{
+	ViewData["Title"] = "Index";
+	Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h1>Rol Listesi Sayfası</h1>
+@if (Model.Count > 0)
+{
+	<table class="table table-bordered">
+		<tr>
+			<th>#</th>
+			<th>Rol Adı</th>
+			<th>Rolü Sil</th>
+			<th>Rolü Güncelle</th>
+		</tr>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>@item.Id</td>
+				<td>@item.Name</td>
+				<td><a href="/Member/Role/DeleteRole/@item.Id" class="btn btn-danger">Rolü Sil</a></td>
+				<td><a href="/Member/Role/EditRole/@item.Id" class="btn btn-success">Rolü Güncelle</a></td>
+			</tr>
+		}
+	</table>
+}
+else
+{
+	<div class="alert alert-success">
+		<span>Herhangi bir rol bulunamadı</span>
+	</div>
+}
+
+<a href="/Member/Role/CreateRole/" class="btn btn-dark">Yeni Rol Ekle</a>

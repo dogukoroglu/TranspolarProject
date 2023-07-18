@@ -1,0 +1,25 @@
+﻿@model List<RoleAssignViewModel>
+@{
+	ViewData["Title"] = "AssignRole";
+	Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<div class="col-md-4 grid-margin stretch-card">
+	<div class="card">
+		<div class="card-body">
+			<h4 class="card-title">Rol Düzenleme Sayfası</h4>
+			<form method="post" class="forms-sample">
+				@for (int i = 0; i < Model.Count; i++)
+				{
+					<div class="form-group">
+						<input type="hidden" asp-for="@Model[i].RoleID" />
+						<input type="hidden" asp-for="@Model[i].RoleName" />
+						<input type="checkbox" asp-for="@Model[i].RoleExist" class="form-check-input" />
+						<label class="form-check-label" for="@Model[i].RoleExist">@Model[i].RoleName</label>
+					</div>
+				}
+				<button type="submit" class="btn btn-primary me-2" style="color:white">Kaydet</button>
+			</form>
+		</div>
+	</div>
+</div>

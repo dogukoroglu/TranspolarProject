@@ -1,5 +1,6 @@
 using DataAccessLayer.Concrete;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -43,6 +44,13 @@ namespace TranspolarProject
 			}); //identiy
 
 			services.AddMvc(); //identity
+
+			//services.AddAuthentication(
+			//	CookieAuthenticationDefaults.AuthenticationScheme)
+			//	.AddCookie(x =>
+			//	{
+			//		x.LoginPath="/"
+			//	})
 
 		}
 
