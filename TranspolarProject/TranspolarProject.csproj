@@ -29,6 +29,7 @@
   <ItemGroup>
     <Folder Include="Areas\Customer\Data\" />
     <Folder Include="Areas\Member\Data\" />
+    <Folder Include="Areas\Support\Data\" />
   </ItemGroup>
 
 </Project>

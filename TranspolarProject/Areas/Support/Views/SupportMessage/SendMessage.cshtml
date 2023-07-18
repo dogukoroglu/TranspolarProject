@@ -1,0 +1,47 @@
+﻿@model EntityLayer.Concrete.SupportMessage
+
+@{
+    ViewData["Title"] = "SendMessage";
+    Layout = "~/Views/Shared/_SupportLayout.cshtml";
+}
+
+<div class="col-8 grid-margin">
+	<div class="card">
+		<div class="card-body">
+			<h4 class="card-title">Yeni Mesaj Oluşturma Sayfası</h4>
+			<form class="form-sample" method="post">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="form-group row">
+							<label class="col-sm-4 col-form-label">Müşteri Seçiniz</label>
+							<div class="col-sm-9">
+								@Html.DropDownListFor(x=>x.Receiver,(List<SelectListItem>)ViewBag.customerList,new{@class="form-control"})
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12">
+						<div class="form-group row">
+							<label class="col-sm-4 col-form-label">Konu Başlığı</label>
+							<div class="col-sm-9">
+								<input type="text" class="form-control" asp-for="Subject" />
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="form-group row">
+							<label class="col-sm-4 col-form-label">Mesaj İçeriği</label>
+							<div class="col-sm-9">
+								<textarea class="form-control" id="exampleTextarea1" rows="4" asp-for="MessageContent"></textarea>
+							</div>
+						</div>
+					</div>
+				</div>
+				<button type="submit" class="btn btn-dark">Gönder</button>
+				<button type="reset" class="btn btn-danger" style="color:white">İptal Et</button>
+			</form>
+		</div>
+	</div>
+</div>
+

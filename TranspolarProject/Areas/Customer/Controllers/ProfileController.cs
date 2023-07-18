@@ -1,10 +1,8 @@
 ﻿using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Newtonsoft.Json.Linq;
 using System.Threading.Tasks;
 using TranspolarProject.Areas.Customer.Models;
-using TranspolarProject.Areas.Member.Models;
 
 namespace TranspolarProject.Areas.Customer.Controllers
 {

@@ -1,0 +1,42 @@
+﻿@using EntityLayer.Concrete
+@model List<SupportMessage>
+@{
+    ViewData["Title"] = "SenderMessage";
+    Layout = "~/Views/Shared/_SupportLayout.cshtml";
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+	<div class="card">
+		<div class="card-body">
+			<h4 class="card-title">Giden Kutusu</h4>
+			<div class="table-responsive">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Alıcı</th>
+							<th>Konu</th>
+							<th>Destek Talebi</th>
+							<th>Tarih</th>
+							<th>Mesaj Detayları</th>
+						</tr>
+					</thead>
+					<tbody>
+						@foreach (var item in Model)
+						{
+							<tr>
+								<td>@item.MessageID</td>
+								<td>@item.ReceiverName</td>
+								<td>@item.Subject</td>
+								<td>@item.MessageContent</td>
+								<td>@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))</td>
+								<td><a href="/Support/SupportMessage/ReceiverMessageDetails/@item.MessageID" class="btn btn-success" style="color:white">Detaylar</a></td>
+							</tr>
+						}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
