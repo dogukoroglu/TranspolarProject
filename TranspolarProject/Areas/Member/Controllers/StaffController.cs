@@ -12,6 +12,8 @@ namespace TranspolarProject.Areas.Member.Controllers
 	[AllowAnonymous]
 	[Area("Member")]
 	[Route("Member/Staff")]
+	[Authorize(Roles = "Admin")]
+
 
 	public class StaffController : Controller
 	{

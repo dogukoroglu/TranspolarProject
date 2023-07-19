@@ -13,6 +13,8 @@ namespace TranspolarProject.Areas.Customer.Controllers
 {
 	[Area("Customer")]
 	[Route("Customer/ServiceRequest")]
+	[Authorize(Roles = "Admin,Customer")]
+
 	public class ServiceRequestController : Controller
 	{
 		FeaturedServiceManager featuredServiceManager = new FeaturedServiceManager(new EfFeaturedServiceDal());

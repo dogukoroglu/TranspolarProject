@@ -2,12 +2,16 @@
 using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 
 namespace TranspolarProject.Areas.Member.Controllers
 {
 	[Area("Member")]
 	[Route("Member/About")]
+	[Authorize(Roles = "Admin")]
+
 	public class AboutController : Controller
 	{
 		AboutManager aboutManager = new AboutManager(new EfAboutDal());

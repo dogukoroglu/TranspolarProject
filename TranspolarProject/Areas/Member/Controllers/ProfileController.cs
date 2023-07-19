@@ -9,8 +9,9 @@ namespace TranspolarProject.Areas.Member.Controllers
 {
     [Area("Member")]
     [Route("Member/[controller]/[action]")]
-    [AllowAnonymous]
-    public class ProfileController : Controller
+	[Authorize(Roles ="Admin")]
+
+	public class ProfileController : Controller
     {
         private readonly UserManager<AppUser> _userManager;
 

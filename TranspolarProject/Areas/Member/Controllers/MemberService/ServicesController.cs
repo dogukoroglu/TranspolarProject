@@ -1,12 +1,16 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 
 namespace TranspolarProject.Areas.Member.Controllers.MemberService
 {
 	[Area("Member")]
 	[Route("Member/Services")]
+	[Authorize(Roles = "Admin")]
+
 	public class ServicesController : Controller
 	{
 		ServiceManager serviceManager = new ServiceManager(new EfServiceDal());

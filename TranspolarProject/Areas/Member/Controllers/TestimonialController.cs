@@ -1,12 +1,16 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 
 namespace TranspolarProject.Areas.Member.Controllers
 {
-    [Area("Member")]
+	[Area("Member")]
     [Route("Member/Testimonial")]
-    public class TestimonialController : Controller
+	[Authorize(Roles = "Admin")]
+
+	public class TestimonialController : Controller
     {
         TestimonialManager testimonialManager = new TestimonialManager(new EfTestimonialDal());
 

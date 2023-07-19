@@ -1,12 +1,16 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 
 namespace TranspolarProject.Areas.Member.Controllers
 {
 	[Area("Member")]
 	[Route("Member/FeaturedService")]
+	[Authorize(Roles = "Admin")]
+
 	public class FeaturedServiceController : Controller
 	{
 		FeaturedServiceManager featuredServiceManager = new FeaturedServiceManager(new EfFeaturedServiceDal());

@@ -1,12 +1,16 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 
 namespace TranspolarProject.Areas.Member.Controllers
 {
 	[Area("Member")]
 	[Route("Member/HomeFeature")]
+	[Authorize(Roles = "Admin")]
+
 	public class HomeFeatureController : Controller
 	{
 		HomeFeatureManager homeFeatureManager = new HomeFeatureManager(new EfHomeFeatureDal());

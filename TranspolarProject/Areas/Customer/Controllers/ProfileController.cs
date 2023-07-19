@@ -1,6 +1,8 @@
 ﻿using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 using System.Threading.Tasks;
 using TranspolarProject.Areas.Customer.Models;
 
@@ -8,6 +10,8 @@ namespace TranspolarProject.Areas.Customer.Controllers
 {
 	[Area("Customer")]
 	[Route("Customer/[controller]/[action]")]
+	[Authorize(Roles = "Admin,Customer")]
+
 	public class ProfileController : Controller
 	{
 		private readonly UserManager<AppUser> _userManager;
