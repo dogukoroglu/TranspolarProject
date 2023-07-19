@@ -85,7 +85,7 @@ namespace TranspolarProject.Areas.Customer.Controllers
 			serviceRequest.Description = "test";
 			serviceRequest.Status = "Onay Bekliyor";
 			serviceRequestManager.TAdd(serviceRequest);
-			return RedirectToAction("MyCurrentRequest");
+			return RedirectToAction("MyApprovalRequest");
 		}
 	}
 }
