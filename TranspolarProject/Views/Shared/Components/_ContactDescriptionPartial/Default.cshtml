@@ -1,0 +1,20 @@
+﻿@using EntityLayer.Concrete
+@model List<Contact>
+
+<h5 class="title-subw3hny">Uzman Ekibimizle İletişime Geçin</h5>
+<h3 class="title-w3l mb-3">Sizlerle İletişime Geçelim</h3>
+@foreach (var item in Model)
+{
+	<p>@item.Descripiton</p>
+
+	<h4 class="title-w3l-adinf mt-4">Support Center 24/7</h4>
+	<div class="address-grid d-flex">
+		<i class="fas fa-headset mt-2"></i>
+		<p><a href="tel:+12 324-016-694" class="link1">@item.Phone</a></p>
+	</div>
+	<div class="address-grid d-flex">
+		<i class="fas fa-envelope"></i>
+		<p class="mt-0"><a href="mailto:mail@example.com" class="link1">@item.Mail</a></p>
+	</div>
+}
+

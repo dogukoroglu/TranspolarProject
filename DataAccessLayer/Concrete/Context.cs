@@ -32,5 +32,6 @@ namespace DataAccessLayer.Concrete
 		public DbSet<About2> About2s{ get; set; }
 		public DbSet<ServiceRequest> ServiceRequests{ get; set; }
 		public DbSet<SupportMessage> SupportMessages{ get; set; }
+		public DbSet<Contact2> Contact2s{ get; set; }
 	}
 }

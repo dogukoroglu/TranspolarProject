@@ -1,0 +1,48 @@
+﻿@model EntityLayer.Concrete.Contact2
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+	<div class="card">
+		<div class="card-body">
+			<h4 class="card-title">İletişim Bilgi Sayfası Düzenleme Paneli</h4>
+			<form class="forms-sample" method="post">
+				<input type="hidden" asp-for="Contact2ID" />
+				<div class="form-group">
+					<label for="exampleInputName1">Adres</label>
+					<input type="text" class="form-control" id="exampleInputName1" asp-for="ShortAddress">
+				</div>
+				<div class="form-group">
+					<label for="exampleInputName1">Mail</label>
+					<input type="text" class="form-control" id="exampleInputName1" asp-for="Mail">
+				</div>
+				<div class="form-group">
+					<label for="exampleInputName1">Telefon</label>
+					<input type="text" class="form-control" id="exampleInputName1" asp-for="Phone">
+				</div>
+				<div class="form-group">
+					<label for="exampleInputName1">Çalışma Günleri</label>
+					<input type="text" class="form-control" id="exampleInputName1" asp-for="WorkDay">
+				</div>
+				<div class="form-group">
+					<label for="exampleInputName1">Çalışma Saatleri</label>
+					<input type="text" class="form-control" id="exampleInputName1" asp-for="WorkHour">
+				</div>
+				<div class="form-group">
+					<label for="exampleInputName1">Bilgi</label>
+					<input type="text" class="form-control" id="exampleInputName1" asp-for="Info">
+				</div>
+				<div class="form-group">
+					<label for="exampleInputName1">Lokasyon</label>
+					<input type="text" class="form-control" id="exampleInputName1" asp-for="MapLocation">
+				</div>
+				<button type="submit" class="btn btn-primary me-2" style="color:white">Güncelle</button>
+				<button class="btn btn-light">İptal Et</button>
+			</form>
+		</div>
+	</div>
+</div>
+

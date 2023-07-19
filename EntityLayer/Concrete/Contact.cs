@@ -14,7 +14,5 @@ namespace EntityLayer.Concrete
         public string Descripiton { get; set; }
         public string Phone { get; set; }
         public string Mail { get; set; }
-        public string MapLocation { get; set; }
-        public bool Status { get; set; }
     }
 }
