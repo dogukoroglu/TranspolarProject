@@ -1,0 +1,24 @@
+﻿@model EntityLayer.Concrete.Testimonial
+
+@{
+    ViewData["Title"] = "CommentDetails";
+    Layout = "~/Views/Shared/_CustomerLayout.cshtml";
+}
+
+<div class="col-md-12 grid-margin stretch-card">
+	<div class="card">
+		<div class="card-body">
+			<h4 class="card-title">Yorum Detayları Sayfası</h4>
+			<form method="post" class="forms-sample">
+				<input type="hidden" asp-for="TestimonialID" />
+				<div class="form-group">
+					<label for="exampleTextarea1">Yorumu</label>
+					<textarea class="form-control" id="exampleTextarea1" rows="4" asp-for="Comment"></textarea>
+				</div>
+				<button type="submit" class="btn btn-dark">Güncelle</button>
+				<button type="reset" class="btn btn-dark">İptal Et</button>
+			</form>
+		</div>
+	</div>
+</div>
+

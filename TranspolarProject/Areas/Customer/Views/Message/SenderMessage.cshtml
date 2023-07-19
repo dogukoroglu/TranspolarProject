@@ -19,6 +19,7 @@
 							<th>Konu</th>
 							<th>Destek Talebi</th>
 							<th>Tarih</th>
+							<th>İptal Et</th>
 							<th>Mesaj Detayları</th>
 						</tr>
 					</thead>
@@ -31,6 +32,7 @@
 								<td>@item.Subject</td>
 								<td>@item.MessageContent</td>
 								<td>@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))</td>
+								<td><a href="/Customer/Message/DeleteMessage/@item.MessageID" class="btn btn-danger" style="color:white">İptal Et</a></td>
 								<td><a href="/Customer/Message/ReceiverMessageDetails/@item.MessageID" class="btn btn-success" style="color:white">Detaylar</a></td>
 							</tr>
 						}
