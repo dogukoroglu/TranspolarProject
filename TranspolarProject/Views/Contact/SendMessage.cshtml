@@ -1,0 +1,26 @@
+﻿@model EntityLayer.Concrete.ContactMessage
+
+<div class="col-lg-6 form-inner-cont mt-lg-0 mt-4">
+    <form asp-action="SendMessage" asp-controller="Contact" method="post" class="signin-form">
+        <div class="form-grids">
+            <div class="form-input">
+                <input type="text" name="ContactName" id="w3lName" placeholder="Adınızı giriniz *" required="" />
+            </div>
+            <div class="form-input">
+                <input type="text" name="ContactSubject" id="w3lSubject" placeholder="Konuyu giriniz " required />
+            </div>
+            <div class="form-input">
+                <input type="email" name="ContactMail" id="w3lSender" placeholder="Mail adresinizi giriniz *"  required />
+            </div>
+            <div class="form-input">
+                <input type="text" name="ContactPhone" id="w3lPhone" placeholder="Telefon numaranızı giriniz *" required />
+            </div>
+        </div>
+        <div class="form-input">
+            <textarea name="ContactContent" id="w3lMessage" placeholder="Sorularınızı buraya yazabilirsiniz..." required=""></textarea>
+        </div>
+        <div class="w3-submit text-right">
+            <button class="btn btn-style btn-primary">Gönder <i class="fas fa-paper-plane ms-2"></i></button>
+        </div>
+    </form>
+</div>

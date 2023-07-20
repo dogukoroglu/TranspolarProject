@@ -38,30 +38,8 @@
                     </div>
 
                     @*İletişim Formu*@
-                    <div class="col-lg-6 form-inner-cont mt-lg-0 mt-4">
-                        <form action="https://sendmail.w3layouts.com/submitForm" method="post" class="signin-form">
-                            <div class="form-grids">
-                                <div class="form-input">
-                                    <input type="text" name="w3lName" id="w3lName" placeholder="Adınızı giriniz *" required="" />
-                                </div>
-                                <div class="form-input">
-                                    <input type="text" name="w3lSubject" id="w3lSubject" placeholder="Konuyu giriniz " required />
-                                </div>
-                                <div class="form-input">
-                                    <input type="email" name="w3lSender" id="w3lSender" placeholder="Mail adresinizi giriniz *" required />
-                                </div>
-                                <div class="form-input">
-                                    <input type="text" name="w3lPhone" id="w3lPhone" placeholder="Telefon numaranızı giriniz *" required />
-                                </div>
-                            </div>
-                            <div class="form-input">
-                                <textarea name="w3lMessage" id="w3lMessage" placeholder="Sorularınızı buraya yazabilirsiniz..." required=""></textarea>
-                            </div>
-                            <div class="w3-submit text-right">
-                                <button class="btn btn-style btn-primary">Gönder <i class="fas fa-paper-plane ms-2"></i></button>
-                            </div>
-                        </form>
-                    </div>
+                    @await Html.PartialAsync("/Views/Contact/SendMessage.cshtml")
+
                 </div>
             </div>
         </div>
