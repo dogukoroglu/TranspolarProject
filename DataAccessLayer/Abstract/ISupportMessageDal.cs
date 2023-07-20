@@ -9,5 +9,6 @@ namespace DataAccessLayer.Abstract
 {
 	public interface ISupportMessageDal : IGenericDal<SupportMessage>
 	{
+		void ChangeMessageStatus(int id);
 	}
 }

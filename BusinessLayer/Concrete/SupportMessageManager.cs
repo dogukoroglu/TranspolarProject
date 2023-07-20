@@ -18,6 +18,11 @@ namespace BusinessLayer.Concrete
 			_supportMessageDal = supportMessageDal;
 		}
 
+		public void TChangeMessageStatus(int id)
+		{
+			_supportMessageDal.ChangeMessageStatus(id);
+		}
+
 		public void TAdd(SupportMessage t)
 		{
 			_supportMessageDal.Insert(t);

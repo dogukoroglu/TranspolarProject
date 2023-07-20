@@ -11,5 +11,6 @@ namespace BusinessLayer.Abstract
 	{
 		List<SupportMessage> TGetListSenderMessage(string p);
 		List<SupportMessage> TGetListReceiverMessage(string p);
+		void TChangeMessageStatus(int id);
 	}
 }

@@ -34,13 +34,20 @@
 								<td>@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))</td>
 								@if (item.Status == true)
 								{
-									<td>Okunmadı</td>
+									<td>Okundu</td>
 								}
 								else
 								{
-									<td>Okundu</td>
+									<td>Okunmadı</td>
 								}
-								<td><a href="/Support/SupportMessage/SenderMessageDetails/@item.MessageID" class="btn btn-danger" style="color:white">Okundu Yap</a></td>
+								@if(item.Status == false)
+								{
+									<td><a href="/Support/SupportMessage/ChangeStatus/@item.MessageID" class="btn btn-primary" style="color:white">Okundu Yap</a></td>
+								}
+								else
+								{
+									<td><a href="/Support/SupportMessage/ChangeStatus/@item.MessageID" class="btn btn-warning" style="color:white">Okunmadı Yap</a></td>
+								}
 								<td><a href="/Support/SupportMessage/SenderMessageDetails/@item.MessageID" class="btn btn-success" style="color:white">Detaylar</a></td>
 							</tr>
 						}

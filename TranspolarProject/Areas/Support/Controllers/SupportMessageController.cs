@@ -107,5 +107,12 @@ namespace TranspolarProject.Areas.Support.Controllers
 			supportMessageManager.TAdd(supportMessage);
 			return RedirectToAction("SenderMessage");
 		}
+
+		[Route("ChangeStatus/{id}")]
+		public IActionResult ChangeStatus(int id)
+		{
+			supportMessageManager.TChangeMessageStatus(id);
+			return RedirectToAction("ReceiverMessage");
+		}
 	}
 }

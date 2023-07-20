@@ -1,4 +1,5 @@
 ﻿using DataAccessLayer.Abstract;
+using DataAccessLayer.Concrete;
 using DataAccessLayer.Repository;
 using EntityLayer.Concrete;
 using System;
@@ -11,5 +12,19 @@ namespace DataAccessLayer.EntityFramework
 {
 	public class EfSupportMessageDal : GenericRepository<SupportMessage>, ISupportMessageDal
 	{
+		public void ChangeMessageStatus(int id)
+		{
+			using var c = new Context();
+			SupportMessage supportMessage = c.SupportMessages.Find(id);
+			if(supportMessage.Status == true )
+			{
+				supportMessage.Status = false;
+			}
+			else
+			{
+				supportMessage.Status = true;
+			}
+			c.SaveChanges();
+		}
 	}
 }
