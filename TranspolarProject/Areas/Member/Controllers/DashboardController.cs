@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using DataAccessLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Data;
+using System.Linq;
 
 namespace TranspolarProject.Areas.Member.Controllers
 {
@@ -11,6 +13,10 @@ namespace TranspolarProject.Areas.Member.Controllers
 	{
 		public IActionResult Index()
 		{
+			Context c = new Context();
+			ViewBag.staffCount = c.Staffs.Count();
+			ViewBag.requestCount = c.ServiceRequests.Count();
+			ViewBag.totalUserCount = c.Users.Count();
 			return View();
 		}
 	}
