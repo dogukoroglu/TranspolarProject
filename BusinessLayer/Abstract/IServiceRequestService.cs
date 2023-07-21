@@ -13,5 +13,10 @@ namespace BusinessLayer.Abstract
 		List<ServiceRequest> GetListCurrentRequest(int id);
 		List<ServiceRequest> GetListOldRequest(int id);
 		List<ServiceRequest> GetListAllRequest(int id);
+		List<ServiceRequest> TGetListRequestWithCustomerName();
+		void TChangeStatusApprove(int id);
+		void TChangeStatusCansel(int id);
+		void TChangeStatusCompleted(int id);
+
 	}
 }

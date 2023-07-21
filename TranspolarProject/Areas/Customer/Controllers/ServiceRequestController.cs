@@ -82,7 +82,7 @@ namespace TranspolarProject.Areas.Customer.Controllers
 		{
 			var loginCustomer = await _userManager.FindByNameAsync(User.Identity.Name);
 			serviceRequest.AppUserID = loginCustomer.Id;
-			serviceRequest.Description = "test";
+			//serviceRequest.Description = "test";
 			serviceRequest.Status = "Onay Bekliyor";
 			serviceRequestManager.TAdd(serviceRequest);
 			return RedirectToAction("MyApprovalRequest");

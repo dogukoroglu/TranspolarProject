@@ -1,15 +1,11 @@
-﻿using BusinessLayer.Abstract;
-using BusinessLayer.Concrete;
+﻿using BusinessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using Microsoft.AspNetCore.Authorization;
-//using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Mvc;
-using TranspolarProject.Areas.Member.Models;
 
 namespace TranspolarProject.Areas.Member.Controllers
 {
-	[AllowAnonymous]
 	[Area("Member")]
 	[Route("Member/Staff")]
 	[Authorize(Roles = "Admin")]

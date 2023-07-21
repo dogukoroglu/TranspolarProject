@@ -1,7 +1,8 @@
 ﻿@model EntityLayer.Concrete.ServiceRequest
+
 @{
-	ViewData["Title"] = "NewRequest";
-	Layout = "~/Views/Shared/_CustomerLayout.cshtml";
+    ViewData["Title"] = "RequestDetails";
+    Layout = "~/Views/Shared/_SupportLayout.cshtml";
 }
 
 <div class="col-12 grid-margin">
@@ -9,12 +10,14 @@
 		<div class="card-body">
 			<h4 class="card-title">Yeni Hizmet Talebi Oluşturma Sayfası</h4>
 			<form class="form-sample" method="post">
+				<input type="hidden" asp-for="ServiceRequestID" />
+
 				<div class="row">
 					<div class="col-md-6">
 						<div class="form-group row">
-							<label class="col-sm-3 col-form-label">Hizmet Seçiniz</label>
+							<label class="col-sm-3 col-form-label">Talep Edilen Hizmet</label>
 							<div class="col-sm-9">
-								@Html.DropDownListFor(x=>x.RequestService,(List<SelectListItem>)ViewBag.v,new{@class="form-control"})
+								<input type="text" class="form-control" asp-for="RequestService" readonly/>
 							</div>
 						</div>
 					</div>
@@ -22,7 +25,7 @@
 						<div class="form-group row">
 							<label class="col-sm-3 col-form-label">Hizmet Tarihi</label>
 							<div class="col-sm-9">
-								<input type="date" class="form-control" asp-for="RequestDate" />
+								<input type="date" class="form-control" asp-for="RequestDate" readonly />
 							</div>
 						</div>
 					</div>
@@ -33,7 +36,7 @@
 						<div class="form-group row">
 							<label class="col-sm-3 col-form-label">Çıkış Noktası</label>
 							<div class="col-sm-9">
-								<input type="text" class="form-control" asp-for="Address1" />
+								<input type="text" class="form-control" asp-for="Address1" readonly/>
 							</div>
 						</div>
 					</div>
@@ -41,7 +44,7 @@
 						<div class="form-group row">
 							<label class="col-sm-3 col-form-label">Şehir(Varış)</label>
 							<div class="col-sm-9">
-								<input type="text" class="form-control" asp-for="City" />
+								<input type="text" class="form-control" asp-for="City" readonly/>
 							</div>
 						</div>
 					</div>
@@ -51,7 +54,7 @@
 						<div class="form-group row">
 							<label class="col-sm-3 col-form-label">Varış Noktası</label>
 							<div class="col-sm-9">
-								<input type="text" class="form-control" asp-for="Address2" />
+								<input type="text" class="form-control" asp-for="Address2" readonly/>
 							</div>
 						</div>
 					</div>
@@ -59,7 +62,7 @@
 						<div class="form-group row">
 							<label class="col-sm-3 col-form-label">Ülke(Varış)</label>
 							<div class="col-sm-9">
-								<input type="text" class="form-control" asp-for="Country" />
+								<input type="text" class="form-control" asp-for="Country" readonly/>
 							</div>
 						</div>
 					</div>
@@ -67,13 +70,15 @@
 				<div class="row">
 					<div class="form-group">
 						<label for="exampleTextarea1">Müşteri Notu</label>
-						<textarea class="form-control" id="exampleTextarea1" rows="4" asp-for="Description"></textarea>
+						<textarea class="form-control" id="exampleTextarea1" rows="4" asp-for="Description" readonly></textarea>
 					</div>
 				</div>
-				<button type="submit" class="btn btn-dark">Talep Oluştur</button>
-				<button type="reset" class="btn btn-danger" style="color:white">İptal Et</button>
+				<a class="btn btn-dark" href="/Support/ServiceRequest/ChangeStatusApprove/@Model.ServiceRequestID">Onayla</a>
+				<a class="btn btn-primary" href="/Support/ServiceRequest/ChangeStatusCompleted/@Model.ServiceRequestID" style="color:white">Tamamlandı</a>
+				<a class="btn btn-danger" href="/Support/ServiceRequest/ChangeStatusCansel/@Model.ServiceRequestID" style="color:white">İptal Et</a>
 			</form>
 		</div>
 	</div>
 </div>
+
 

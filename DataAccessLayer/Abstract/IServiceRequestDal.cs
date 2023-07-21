@@ -9,5 +9,9 @@ namespace DataAccessLayer.Abstract
 {
 	public interface IServiceRequestDal : IGenericDal<ServiceRequest>
 	{
+		List<ServiceRequest> GetListRequestWithCustomerName();
+		void ChangeStatusApprove(int id);
+		void ChangeStatusCansel(int id);
+		void ChangeStatusCompleted(int id);
 	}
 }
