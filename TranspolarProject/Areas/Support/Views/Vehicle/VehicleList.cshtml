@@ -1,0 +1,51 @@
+﻿@using EntityLayer.Concrete
+@model List<Vehicle>
+
+@{
+    ViewData["Title"] = "VehicleList";
+    Layout = "~/Views/Shared/_SupportLayout.cshtml";
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+	<div class="card">
+		<div class="card-body">
+			<h4 class="card-title">Gelen Hizmet Talepleri</h4>
+			<div class="table-responsive">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>#</th>
+							<th>Taşıt Türü</th>
+							<th>Taşıt Markası</th>
+							<th>Taşıt Modeli</th>
+							<th>Taşıt Plakası</th>
+							<th>Taşıt Kilometresi</th>
+							<th>Taşıt Durumu</th>
+							<th>Güncelle</th>
+							<th>Sil</th>
+						</tr>
+					</thead>
+					<tbody>
+						@foreach (var item in Model)
+						{
+							<tr>
+								<td>@item.VehicleID</td>
+								@*<td>@(((DateTime)item.RequestDate).ToString("dd-MMM-yyyy"))</td>*@
+								<td>@item.VehicleType</td>
+								<td>@item.VehicleBrand</td>
+								<td>@item.VehicleModel</td>
+								<td>@item.VehiclePlate</td>
+								<td>@item.VehicleKm</td>
+								<td>@item.VehicleStatus</td>
+								<td><a class="btn btn-success" href="/Support/Vehicle/VehicleDetail/@item.VehicleID" style="color:white">Detaylar</a></td>
+								<td><a class="btn btn-danger" href="/Support/Vehicle/DeleteVehicle/@item.VehicleID" style="color:white">Sil</a></td>
+							</tr>
+						}
+					</tbody>
+				</table>
+				<a class="btn btn-dark" href="/Support/Vehicle/AddVehicle">Yeni Taşıt Ekle</a>
+			</div>
+		</div>
+	</div>
+</div>
+

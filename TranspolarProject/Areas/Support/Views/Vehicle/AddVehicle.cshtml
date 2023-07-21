@@ -1,0 +1,42 @@
+﻿@model EntityLayer.Concrete.Vehicle
+@{
+    ViewData["Title"] = "AddVehicle";
+    Layout = "~/Views/Shared/_SupportLayout.cshtml";
+}
+
+<div class="col-md-12 grid-margin stretch-card">
+	<div class="card">
+		<div class="card-body">
+			<h4 class="card-title">Yeni Taşıt Ekleme Sayfası</h4>
+			<form method="post" class="forms-sample">
+				<div class="form-group">
+					<label for="exampleInputUsername1">Taşıt Türü</label>
+					<input type="text" class="form-control" id="exampleInputUsername1" asp-for="VehicleType">
+				</div>
+				<div class="form-group">
+					<label for="exampleInputUsername1">Taşıt Markası</label>
+					<input type="text" class="form-control" id="exampleInputUsername1" asp-for="VehicleBrand">
+				</div>
+				<div class="form-group">
+					<label for="exampleInputUsername1">Taşıt Modeli</label>
+					<input type="text" class="form-control" id="exampleInputUsername1" asp-for="VehicleModel">
+				</div>
+				<div class="form-group">
+					<label for="exampleInputUsername1">Taşıt Plakası</label>
+					<input type="text" class="form-control" id="exampleInputUsername1" asp-for="VehiclePlate">
+				</div>
+				<div class="form-group">
+					<label for="exampleInputUsername1">Taşıt Kilometresi</label>
+					<input type="text" class="form-control" id="exampleInputUsername1" asp-for="VehicleKm">
+				</div>
+				@*<div class="form-group">
+					<label for="exampleInputUsername1">Taşıt Durumu</label>
+					<input type="text" class="form-control" id="exampleInputUsername1" asp-for="VehicleStatus">
+				</div>*@
+				<button type="submit" class="btn btn-primary me-2">Kaydet</button>
+				<button type="reset" class="btn btn-light">İptal Et</button>
+			</form>
+		</div>
+	</div>
+</div>
+

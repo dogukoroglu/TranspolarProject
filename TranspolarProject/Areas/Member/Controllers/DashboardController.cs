@@ -17,6 +17,7 @@ namespace TranspolarProject.Areas.Member.Controllers
 			ViewBag.staffCount = c.Staffs.Count();
 			ViewBag.requestCount = c.ServiceRequests.Count();
 			ViewBag.totalUserCount = c.Users.Count();
+			ViewBag.vehicleCount = c.Vehicles.Count();
 			return View();
 		}
 	}
