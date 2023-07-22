@@ -10,6 +10,7 @@
 					<table id="recent-purchases-listing" class="table">
 						<thead>
 							<tr>
+								<th>#</th>
 								<th>Hizmet</th>
 								<th>Durum</th>
 								<th>Konum</th>
@@ -20,6 +21,7 @@
 							@foreach (var item in Model)
 							{	
 							<tr>
+								<td>@item.ServiceRequestID</td>
 								<td>@item.RequestService</td>
 								<td>@item.Status</td>
 								<td>@item.City</td>

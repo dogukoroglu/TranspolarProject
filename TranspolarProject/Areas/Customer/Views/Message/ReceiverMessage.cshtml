@@ -29,7 +29,7 @@
 								<td>@item.MessageID</td>
 								<td>@item.SenderName</td>
 								<td>@item.Subject</td>
-								<td>@item.MessageContent</td>
+								<td>@item.MessageContent.Substring(0,25)...</td>
 								<td>@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))</td>
 								<td><a href="/Customer/Message/SenderMessageDetails/@item.MessageID" class="btn btn-success" style="color:white">Detaylar</a></td>
 							</tr>

@@ -48,7 +48,7 @@ namespace TranspolarProject
 			services.ConfigureApplicationCookie(opt =>
 			{
 				opt.Cookie.HttpOnly = true;
-				opt.ExpireTimeSpan = TimeSpan.FromMinutes(15);
+				opt.ExpireTimeSpan = TimeSpan.FromMinutes(30);
 				opt.AccessDeniedPath = "/ErrorPage/Error401/";
 			});
 

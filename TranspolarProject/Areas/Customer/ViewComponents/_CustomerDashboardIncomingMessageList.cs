@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace TranspolarProject.Areas.Customer.ViewComponents
 {
-	public class _CustomerDashboardRequestList : ViewComponent
+	public class _CustomerDashboardIncomingMessageList : ViewComponent
 	{
-		ServiceRequestManager serviceRequestManager = new ServiceRequestManager(new EfServiceRequestDal());
+		SupportMessageManager supportMessageManager = new SupportMessageManager(new EfSupportMessageDal());
 		private readonly UserManager<AppUser> _userManager;
 
-		public _CustomerDashboardRequestList(UserManager<AppUser> userManager)
+		public _CustomerDashboardIncomingMessageList(UserManager<AppUser> userManager)
 		{
 			_userManager = userManager;
 		}
@@ -21,7 +21,7 @@ namespace TranspolarProject.Areas.Customer.ViewComponents
 		public async Task<IViewComponentResult> InvokeAsync()
 		{
 			var logginUser = await _userManager.FindByNameAsync(User.Identity.Name);
-			var values = serviceRequestManager.GetListAllRequest(logginUser.Id).TakeLast(2).ToList();
+			var values = supportMessageManager.TGetListAll().Where(x => x.Receiver == logginUser.Email).OrderByDescending(x=>x.MessageID).ToList();	
 			return View(values);
 		}
 	}

@@ -1,0 +1,36 @@
+﻿@using EntityLayer.Concrete
+@model List<SupportMessage>
+
+<div class="row">
+	<div class="col-md-12 stretch-card">
+		<div class="card">
+			<div class="card-body">
+				<p class="card-title">Son Gelen 3 Mesaj</p>
+				<div class="table-responsive">
+					<table id="recent-purchases-listing" class="table">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>Gönderen</th>
+								<th>Konu</th>
+								<th>Tarih</th>
+								<th>Detay</th>
+							</tr>
+						</thead>
+						<tbody>
+							@foreach (var item in Model)
+							{
+								<tr>
+									<td>@item.MessageID</td>
+									<td>@item.SenderName</td>
+									<td>@item.Subject</td>
+									<td>@item.Date</td>
+									<td><a href="/Customer/Message/SenderMessageDetails/@item.MessageID">Mesajı Gör</a></td>
+								</tr>
+							}
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
