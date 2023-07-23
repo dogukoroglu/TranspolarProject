@@ -5,3 +5,4 @@
 - Member areası aslında admin panelini kapsamaktadır. İsimlendirme yanlış yapılmıştır.
 - Projede müşteriler kendilerine ait panele sayfa üzerindeki linkten ulaşabilirler. Fakat Admin ve Support için oluşturulan panellere 
 /Login/SignIn/ ve /Support/Login/SignIn üzerinden ulaşılabilir.
+- Müşteriler Kayıt olmak için kayıt sayfasında girdikleri maillerine gelen kodu girerek hesaplarını aktif hale getirebilecek. Bu şekilde kontrol panellerine erişim sağlayacaklar.
