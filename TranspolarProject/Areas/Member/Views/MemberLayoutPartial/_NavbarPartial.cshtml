@@ -27,96 +27,14 @@
                     <i class="mdi mdi-message-text mx-0"></i>
                     <span class="count"></span>
                 </a>
-                <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="messageDropdown">
-                    <p class="mb-0 font-weight-normal float-left dropdown-header">Mesajlar</p>
-                    <a class="dropdown-item">
-                        <div class="item-thumbnail">
-                            <img src="~/majesticadmin/template/images/faces/face4.jpg" alt="image" class="profile-pic">
-                        </div>
-                        <div class="item-content flex-grow">
-                            <h6 class="ellipsis font-weight-normal">
-                                Bülent Mert Yapıcı
-                            </h6>
-                            <p class="font-weight-light small-text text-muted mb-0">
-                                The meeting is cancelled
-                            </p>
-                        </div>
-                    </a>
-                    <a class="dropdown-item">
-                        <div class="item-thumbnail">
-                            <img src="~/majesticadmin/template/images/faces/face2.jpg" alt="image" class="profile-pic">
-                        </div>
-                        <div class="item-content flex-grow">
-                            <h6 class="ellipsis font-weight-normal">
-                                Yekta Çetintaş
-                            </h6>
-                            <p class="font-weight-light small-text text-muted mb-0">
-                                New product launch
-                            </p>
-                        </div>
-                    </a>
-                    <a class="dropdown-item">
-                        <div class="item-thumbnail">
-                            <img src="~/majesticadmin/template/images/faces/face3.jpg" alt="image" class="profile-pic">
-                        </div>
-                        <div class="item-content flex-grow">
-                            <h6 class="ellipsis font-weight-normal">
-                                Ümit Eroğlu
-                            </h6>
-                            <p class="font-weight-light small-text text-muted mb-0">
-                                Upcoming board meeting
-                            </p>
-                        </div>
-                    </a>
-                </div>
+                @await Component.InvokeAsync("_NavbarUserMessagePartial")
             </li>
             <li class="nav-item dropdown me-4">
                 <a class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center notification-dropdown" id="notificationDropdown" href="#" data-bs-toggle="dropdown">
                     <i class="mdi mdi-bell mx-0"></i>
                     <span class="count"></span>
                 </a>
-                <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="notificationDropdown">
-                    <p class="mb-0 font-weight-normal float-left dropdown-header">Bildirimler</p>
-                    <a class="dropdown-item">
-                        <div class="item-thumbnail">
-                            <div class="item-icon bg-success">
-                                <i class="mdi mdi-information mx-0"></i>
-                            </div>
-                        </div>
-                        <div class="item-content">
-                            <h6 class="font-weight-normal">Application Error</h6>
-                            <p class="font-weight-light small-text mb-0 text-muted">
-                                Şimdi
-                            </p>
-                        </div>
-                    </a>
-                    <a class="dropdown-item">
-                        <div class="item-thumbnail">
-                            <div class="item-icon bg-warning">
-                                <i class="mdi mdi-settings mx-0"></i>
-                            </div>
-                        </div>
-                        <div class="item-content">
-                            <h6 class="font-weight-normal">Settings</h6>
-                            <p class="font-weight-light small-text mb-0 text-muted">
-                                Private message
-                            </p>
-                        </div>
-                    </a>
-                    <a class="dropdown-item">
-                        <div class="item-thumbnail">
-                            <div class="item-icon bg-info">
-                                <i class="mdi mdi-account-box mx-0"></i>
-                            </div>
-                        </div>
-                        <div class="item-content">
-                            <h6 class="font-weight-normal">New user registration</h6>
-                            <p class="font-weight-light small-text mb-0 text-muted">
-                                2 Gün Önce
-                            </p>
-                        </div>
-                    </a>
-                </div>
+                @await Component.InvokeAsync("_NavbarUserNotificationPartial")
             </li>
             @await Component.InvokeAsync("_NavbarUserProfile")
         </ul>

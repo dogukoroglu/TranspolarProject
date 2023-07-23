@@ -1,0 +1,22 @@
+﻿@using EntityLayer.Concrete
+@model List<ServiceRequest>
+
+<div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="notificationDropdown">
+	<p class="mb-0 font-weight-normal float-left dropdown-header">Bildirimler</p>
+	@foreach (var item in Model)
+	{
+		<a class="dropdown-item" href="/Support/ServiceRequest/RequestDetails/@item.ServiceRequestID">
+			<div class="item-thumbnail">
+				<div class="item-icon bg-success">
+					<i class="mdi mdi-information mx-0"></i>
+				</div>
+			</div>
+			<div class="item-content">
+				<h6 class="font-weight-normal">@item.RequestService</h6>
+				<p class="font-weight-light small-text mb-0 text-muted">
+					@item.RequestDate
+				</p>
+			</div>
+		</a>
+	}
+</div>

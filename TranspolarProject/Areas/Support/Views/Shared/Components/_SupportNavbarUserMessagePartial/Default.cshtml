@@ -1,0 +1,28 @@
+﻿@using EntityLayer.Concrete
+@model List<SupportMessage>
+
+<div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="messageDropdown">
+	<p class="mb-0 font-weight-normal float-left dropdown-header">Mesajlar</p>
+	@foreach (var item in Model)
+	{
+		<a class="dropdown-item" href="/Support/SupportMessage/SenderMessageDetails/@item.MessageID">
+			@*<div class="item-thumbnail">
+				<img src="~/majesticadmin/template/images/faces/face4.jpg" alt="image" class="profile-pic">
+			</div>*@
+			<div class="item-thumbnail">
+				<div class="item-icon bg-success">
+					<i class="mdi mdi-information mx-0"></i>
+				</div>
+			</div>
+			<div class="item-content flex-grow">
+				<h6 class="ellipsis font-weight-normal">
+					@item.SenderName
+				</h6>
+				<p class="font-weight-light small-text text-muted mb-0">
+					@item.MessageContent.Substring(0,25)...
+				</p>
+			</div>
+		</a>
+	}
+</div>
+

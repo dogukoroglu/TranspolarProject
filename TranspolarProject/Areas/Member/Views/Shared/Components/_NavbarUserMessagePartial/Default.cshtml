@@ -1,0 +1,48 @@
+﻿@using EntityLayer.Concrete
+@model List<SupportMessage>
+
+<div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="messageDropdown">
+    <p class="mb-0 font-weight-normal float-left dropdown-header">Mesajlar</p>
+    @foreach (var item in Model)
+    {
+    <a class="dropdown-item">
+        <div class="item-thumbnail">
+            <img src="~/majesticadmin/template/images/faces/face4.jpg" alt="image" class="profile-pic">
+        </div>
+        <div class="item-content flex-grow">
+            <h6 class="ellipsis font-weight-normal">
+                @item.SenderName
+            </h6>
+            <p class="font-weight-light small-text text-muted mb-0">
+                @item.MessageContent.Substring(0,25)...
+            </p>
+        </div>
+    </a>
+    }
+    @*<a class="dropdown-item">
+        <div class="item-thumbnail">
+            <img src="~/majesticadmin/template/images/faces/face2.jpg" alt="image" class="profile-pic">
+        </div>
+        <div class="item-content flex-grow">
+            <h6 class="ellipsis font-weight-normal">
+                Yekta Çetintaş
+            </h6>
+            <p class="font-weight-light small-text text-muted mb-0">
+                New product launch
+            </p>
+        </div>
+    </a>
+    <a class="dropdown-item">
+        <div class="item-thumbnail">
+            <img src="~/majesticadmin/template/images/faces/face3.jpg" alt="image" class="profile-pic">
+        </div>
+        <div class="item-content flex-grow">
+            <h6 class="ellipsis font-weight-normal">
+                Ümit Eroğlu
+            </h6>
+            <p class="font-weight-light small-text text-muted mb-0">
+                Upcoming board meeting
+            </p>
+        </div>
+    </a>*@
+</div>
