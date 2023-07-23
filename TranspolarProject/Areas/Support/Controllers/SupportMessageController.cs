@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -31,7 +32,7 @@ namespace TranspolarProject.Areas.Support.Controllers
 		}
 
 		[Route("ReceiverMessage")]
-		public async Task<IActionResult> ReceiverMessage(string p)
+		public async Task<IActionResult> ReceiverMessage(string p) //Bize gönderilen
 		{
 			var values = await _userManager.FindByNameAsync(User.Identity.Name);
 			p = values.Email;
@@ -40,7 +41,7 @@ namespace TranspolarProject.Areas.Support.Controllers
 		}
 
 		[Route("SenderMessage")]
-		public async Task<IActionResult> SenderMessage(string p)
+		public async Task<IActionResult> SenderMessage(string p) // Bizim gönderdiğimiz
 		{
 			var values = await _userManager.FindByNameAsync(User.Identity.Name);
 			p = values.Email;
@@ -49,14 +50,14 @@ namespace TranspolarProject.Areas.Support.Controllers
 		}
 
 		[Route("SenderMessageDetails/{id}")]
-		public IActionResult SenderMessageDetails(int id)
+		public IActionResult SenderMessageDetails(int id) // Bizim gönderdiğimiz
 		{
 			SupportMessage supportMessage = supportMessageManager.TGetByID(id);
 			return View(supportMessage);
 		}
 
 		[Route("ReceiverMessageDetails/{id}")]
-		public IActionResult ReceiverMessageDetails(int id)
+		public IActionResult ReceiverMessageDetails(int id) // Bize gönderilen
 		{
 			SupportMessage supportMessage = supportMessageManager.TGetByID(id);
 			return View(supportMessage);

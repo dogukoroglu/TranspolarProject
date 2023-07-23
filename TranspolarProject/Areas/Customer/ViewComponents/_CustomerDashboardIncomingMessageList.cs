@@ -21,7 +21,7 @@ namespace TranspolarProject.Areas.Customer.ViewComponents
 		public async Task<IViewComponentResult> InvokeAsync()
 		{
 			var logginUser = await _userManager.FindByNameAsync(User.Identity.Name);
-			var values = supportMessageManager.TGetListAll().Where(x => x.Receiver == logginUser.Email).OrderByDescending(x=>x.MessageID).ToList();	
+			var values = supportMessageManager.TGetListAll().Where(x => x.Receiver == logginUser.Email).OrderByDescending(x=>x.MessageID).Take(3).ToList();	
 			return View(values);
 		}
 	}

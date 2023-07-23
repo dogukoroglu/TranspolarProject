@@ -2,6 +2,7 @@
 using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -10,49 +11,48 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace TranspolarProject.Areas.Customer.Controllers
+namespace TranspolarProject.Areas.Member.Controllers
 {
-	[Area("Customer")]
-	[Route("Customer/Message")]
+	[AllowAnonymous]
+	[Area("Member")]
+	[Route("Member/Message")]
 	public class MessageController : Controller
 	{
 		SupportMessageManager supportMessageManager = new SupportMessageManager(new EfSupportMessageDal());
 		private readonly UserManager<AppUser> _userManager;
-		private readonly RoleManager<AppRole> _roleManager;
 
-		public MessageController(UserManager<AppUser> userManager, RoleManager<AppRole> roleManager)
+		public MessageController(UserManager<AppUser> userManager)
 		{
 			_userManager = userManager;
-			_roleManager = roleManager;
 		}
 
-		[Route("ReceiverMessage")]
-		public async Task<IActionResult> ReceiverMessage(string p)
+		[Route("Inbox")]
+		public async Task<IActionResult> Inbox(string p)
 		{
-			var values = await _userManager.FindByNameAsync(User.Identity.Name);
-			p = values.Email;
+			var logginUser = await _userManager.FindByNameAsync(User.Identity.Name);
+			p = logginUser.Email;
 			var messageList = supportMessageManager.TGetListReceiverMessage(p);
 			return View(messageList);
 		}
 
-		[Route("SenderMessage")]
-		public async Task<IActionResult> SenderMessage(string p)
+		[Route("Sendbox")]
+		public async Task<IActionResult> Sendbox(string p)
 		{
-			var values = await _userManager.FindByNameAsync(User.Identity.Name);
-			p = values.Email;
+			var logginUser = await _userManager.FindByNameAsync(User.Identity.Name);
+			p = logginUser.Email;
 			var messageList = supportMessageManager.TGetListSenderMessage(p);
 			return View(messageList);
 		}
 
 		[Route("SenderMessageDetails/{id}")]
-		public IActionResult SenderMessageDetails(int id)
+		public IActionResult SenderMessageDetails(int id) // Bizim gönderdiğimiz
 		{
 			SupportMessage supportMessage = supportMessageManager.TGetByID(id);
 			return View(supportMessage);
 		}
 
 		[Route("ReceiverMessageDetails/{id}")]
-		public IActionResult ReceiverMessageDetails(int id)
+		public IActionResult ReceiverMessageDetails(int id) // Bize gönderilen
 		{
 			SupportMessage supportMessage = supportMessageManager.TGetByID(id);
 			return View(supportMessage);
@@ -64,26 +64,14 @@ namespace TranspolarProject.Areas.Customer.Controllers
 		{
 			Context c = new Context();
 			var logginUser = await _userManager.FindByNameAsync(User.Identity.Name);
-			var supportRole = await _roleManager.FindByNameAsync("Support");
-			var adminRole = await _roleManager.FindByNameAsync("Admin");
-
-			List<SelectListItem> supportList = (from x in c.Users.ToList()
-												 join userRole in c.UserRoles on x.Id equals userRole.UserId
-												 where userRole.RoleId == supportRole.Id && x.Email != logginUser.Email
+			List<SelectListItem> customerList = (from x in c.Users.ToList()
+												 where x.Email != logginUser.Email
 												 select new SelectListItem
 												 {
 													 Text = x.Name + " " + x.Surname,
 													 Value = x.Email
 												 }).ToList();
-
-			//List<SelectListItem> customerList = (from x in c.Users.ToList()
-			//									 where x.Email != logginUser.Email
-			//									 select new SelectListItem
-			//									 {
-			//										 Text = x.Name + " " + x.Surname,
-			//										 Value = x.Email
-			//									 }).ToList();
-			ViewBag.customerList = supportList;
+			ViewBag.customerList = customerList;
 			return View();
 		}
 
@@ -100,23 +88,14 @@ namespace TranspolarProject.Areas.Customer.Controllers
 			supportMessage.Sender = mail;
 			supportMessage.SenderName = name;
 			supportMessage.ReceiverName = receiverName;
-			supportMessage.Status = true;
 			supportMessageManager.TAdd(supportMessage);
-			return RedirectToAction("SenderMessage");
+			return RedirectToAction("Sendbox");
 		}
 
 		[Route("ChangeStatus/{id}")]
 		public IActionResult ChangeStatus(int id)
 		{
 			supportMessageManager.TChangeMessageStatus(id);
-			return RedirectToAction("ReceiverMessage");
-		}
-
-		[Route("DeleteMessage/{id}")]
-		public IActionResult DeleteMessage(int id)
-		{
-			var value = supportMessageManager.TGetByID(id);
-			supportMessageManager.TDelete(value);
 			return RedirectToAction("ReceiverMessage");
 		}
 	}

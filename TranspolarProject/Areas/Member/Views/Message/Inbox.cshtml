@@ -2,8 +2,8 @@
 @model List<SupportMessage>
 
 @{
-    ViewData["Title"] = "ReceiverMessage";
-    Layout = "~/Views/Shared/_CustomerLayout.cshtml";
+    ViewData["Title"] = "Inbox";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
 }
 
 <div class="col-lg-12 grid-margin stretch-card">
@@ -31,7 +31,7 @@
 								<td>@item.MessageID</td>
 								<td>@item.SenderName</td>
 								<td>@item.Subject</td>
-								<td>@item.MessageContent.Substring(0,25)...</td>
+								<td>@item.MessageContent</td>
 								<td>@(((DateTime)item.Date).ToString("dd-MMM-yyyy"))</td>
 								@if (item.Status == true)
 								{
@@ -43,13 +43,13 @@
 								}
 								@if (item.Status == false)
 								{
-									<td><a href="/Customer/Message/ChangeStatus/@item.MessageID" class="btn btn-primary" style="color:white">Okundu Yap</a></td>
+									<td><a href="/Member/Message/ChangeStatus/@item.MessageID" class="btn btn-primary" style="color:white">Okundu Yap</a></td>
 								}
 								else
 								{
-									<td><a href="/Customer/Message/ChangeStatus/@item.MessageID" class="btn btn-warning" style="color:white">Okunmadı Yap</a></td>
+									<td><a href="/Member/Message/ChangeStatus/@item.MessageID" class="btn btn-warning" style="color:white">Okunmadı Yap</a></td>
 								}
-								<td><a href="/Customer/Message/SenderMessageDetails/@item.MessageID" class="btn btn-success" style="color:white">Detaylar</a></td>
+								<td><a href="/Member/Message/SenderMessageDetails/@item.MessageID" class="btn btn-success" style="color:white">Detaylar</a></td>
 							</tr>
 						}
 					</tbody>

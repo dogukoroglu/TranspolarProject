@@ -28,8 +28,12 @@ namespace TranspolarProject.Areas.Customer.Controllers
 		{
 			var logginUser = await _userManager.FindByNameAsync(User.Identity.Name);
 			Context c = new Context();
-			ViewBag.lastRequestStatus = "Test";
+			//ViewBag.lastRequestStatus = c.ServiceRequests.Where(x => x.AppUserID == logginUser.Id);
+			ViewBag.lastRequestStatus = c.ServiceRequests.OrderByDescending(x => x.ServiceRequestID).FirstOrDefault(x => x.AppUserID == logginUser.Id).Status;
 			ViewBag.totalRequestCount = c.ServiceRequests.Where(x => x.AppUserID == logginUser.Id).Count();
+			//ViewBag.unreadMessageCount = c.SupportMessages.Where(x=>x.Receiver == logginUser.Email).Select(y=>y.Status == false).Count();	
+			ViewBag.unreadMessageCount = c.SupportMessages.Where(x => x.Receiver == logginUser.Email && x.Status == false).Count();
+			ViewBag.readMessageCount = c.SupportMessages.Where(x => x.Receiver == logginUser.Email && x.Status == true).Count();
 			return View();
 		}
 	}
