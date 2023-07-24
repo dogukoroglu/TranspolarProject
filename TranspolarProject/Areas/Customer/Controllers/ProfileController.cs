@@ -10,7 +10,7 @@ namespace TranspolarProject.Areas.Customer.Controllers
 {
 	[Area("Customer")]
 	[Route("Customer/[controller]/[action]")]
-	[Authorize(Roles = "Admin,Customer")]
+	[Authorize(Roles = "Customer")]
 
 	public class ProfileController : Controller
 	{

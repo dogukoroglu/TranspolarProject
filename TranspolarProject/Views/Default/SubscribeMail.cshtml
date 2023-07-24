@@ -1,0 +1,10 @@
+﻿@model EntityLayer.Concrete.NewsLetter
+
+<div class="col-lg-6 w3l-newsletter-form ps-lg-5 mt-lg-0 mt-md-5 mt-4">
+	<form asp-action="SubscribeMail" asp-controller="Default" method="post" class="subscribe-wthree">
+		<div class="flex-wrap subscribe-wthree-field">
+			<input class="form-control" type="email" placeholder="Mail Adresiniz..." name="Mail" required="">
+			<button class="btn btn-style btn-primary" type="submit">Abone Ol</button>
+		</div>
+	</form>
+</div>

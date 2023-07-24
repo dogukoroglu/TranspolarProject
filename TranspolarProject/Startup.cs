@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Authorization;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -48,8 +49,9 @@ namespace TranspolarProject
 			services.ConfigureApplicationCookie(opt =>
 			{
 				opt.Cookie.HttpOnly = true;
-				opt.ExpireTimeSpan = TimeSpan.FromMinutes(30);
+				opt.ExpireTimeSpan = TimeSpan.FromHours(12);
 				opt.AccessDeniedPath = "/ErrorPage/Error401/";
+				
 			});
 
 			//services.AddAuthentication(

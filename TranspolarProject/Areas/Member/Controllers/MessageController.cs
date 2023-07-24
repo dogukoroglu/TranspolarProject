@@ -13,9 +13,9 @@ using System.Threading.Tasks;
 
 namespace TranspolarProject.Areas.Member.Controllers
 {
-	[AllowAnonymous]
 	[Area("Member")]
 	[Route("Member/Message")]
+	[Authorize(Roles ="Admin")]
 	public class MessageController : Controller
 	{
 		SupportMessageManager supportMessageManager = new SupportMessageManager(new EfSupportMessageDal());

@@ -2,6 +2,7 @@
 using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -14,6 +15,7 @@ namespace TranspolarProject.Areas.Customer.Controllers
 {
 	[Area("Customer")]
 	[Route("Customer/Message")]
+	[Authorize(Roles ="Customer")]
 	public class MessageController : Controller
 	{
 		SupportMessageManager supportMessageManager = new SupportMessageManager(new EfSupportMessageDal());
